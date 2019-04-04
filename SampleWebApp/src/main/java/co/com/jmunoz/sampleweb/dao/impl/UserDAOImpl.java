@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author sala312
  */
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<User> getUsers() {
@@ -23,40 +23,43 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public User getUser(String id) {
-        
         User lookingUser = new User(id);
         List<User> users = this.getUsers();
-        User foundUser = users.indexOf(lookingUser);
-        
-        
-        
-        ;
-        for (User user : users) {
-            if (user.getId().equals(id)) {
-                foundUser = user;
-                break;
-            }
-        }
-        
-        return foundUser;
+        int index = users.indexOf(lookingUser);
+        return index > -1 ? users.get(index) : null;
     }
 
     @Override
     public User saveUser(User user) {
-        
         User userInlist = this.getUser(user.getId());
-        
+
         if (userInlist == null) {
             this.getUsers().add(user);
             userInlist = user;
+        } else {
+            // Update user
         }
-        
+
         return userInlist;
     }
 
     @Override
-    public void deleteUser(User user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void deleteUser(String id) {
+        User userInlist = this.getUser(id);
+
+        if (userInlist != null) {
+            this.getUsers().remove(userInlist);
+        }
     }
-    
+
+    public static void main(String[] args) {
+        UserDAOImpl dao = new UserDAOImpl();
+        System.out.println(dao.getUsers().size());
+        System.out.println(dao.getUser("1"));
+        System.out.println(dao.saveUser(new User("4")));
+        System.out.println(dao.getUsers().size());
+        dao.deleteUser("4");
+        System.out.println(dao.getUsers().size());
+    }
+
 }

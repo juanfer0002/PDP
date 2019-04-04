@@ -17,7 +17,7 @@ public interface UserDAO {
     List<User> getUsers();
     User getUser(String id);
     User saveUser(User user);
-    void deleteUser(User user);
+    void deleteUser(String id);
     
 
 }
