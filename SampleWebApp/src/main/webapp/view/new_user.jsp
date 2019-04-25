@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h4 class="mb-3">New user</h4>
-                <form class="needs-validation" novalidate>
+                <form class="needs-validation" data-toggle="validator" role="form" method="POST" action="${path}/ServletNewUser">
 
                     <div class="mb-3">
                         <label for="documentId">Document ID</label>
@@ -85,9 +86,9 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="status">Status</label>
-                            <select class="custom-select d-block w-100" id="status" name="status" required>
-                                <option>Active</option>
-                                <option>Inactive</option>
+                            <select class="custom-select d-block w-100" id="status" required>
+                                <option name="status" value="true">Active</option>
+                                <option name="status" value="false">Inactive</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid status.

@@ -5,6 +5,9 @@
  */
 package co.com.jmunoz.sampleweb.controller;
 
+import co.com.jmunoz.sampleweb.business.UserBusiness;
+import co.com.jmunoz.sampleweb.business.impl.UserBusinessImpl;
+import co.com.jmunoz.sampleweb.model.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +17,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author giocode
+ * @author sala312
  */
-public class ServletSignin extends HttpServlet {
+public class ServletNewUser extends HttpServlet {
+
+    private static final UserBusiness USER_BUSINESS = new UserBusinessImpl();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,10 +35,27 @@ public class ServletSignin extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         
-        request.getRequestDispatcher("/view/menu.jsp")
-                .forward(request, response);
+        String documentId = request.getParameter("documentId");
+        String name = request.getParameter("name");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        boolean active = Boolean.valueOf(request.getParameter("name"));
+
+        User user = USER_BUSINESS.getUser(documentId);
+        String msg = "User already exists";
+
+        if (user == null) {
+            user = new User(documentId, name, lastName, email, password, active);
+            USER_BUSINESS.saveUser(user);
+            msg = "User created";
+        }
+        
+        session.setAttribute("MSG", msg);
+        session.setAttribute("ROUTE", "/view/menu.jsp");
+        request.getRequestDispatcher("/messages.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
