@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">                
-        <title>Users</title>
+        <title>List users</title>
         <!-- Custom styles for this template -->
         <link href="${path}/css/album.css" rel="stylesheet">
     </head>
@@ -34,11 +34,28 @@
         </header>
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading">Users</h1>
-                <p>
-                    <a href="${path}/view/new_user.jsp" class="btn btn-primary my-2">Create user</a>
-                    <a href="${path}/view/list_users.jsp" class="btn btn-secondary my-2">See all users</a>
-                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Doc. ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="user" items="${sessionScope.USERS}">
+                            <tr>
+                                <td>${user.id}</td>
+                                <td>${user.name}</td>
+                                <td>${user.lastName}</td>
+                                <td>${user.email}</td>   
+                                <td>${user.active ? "Active" : "Inactive"}</td>   
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
             </div>
         </section>        
     </body>

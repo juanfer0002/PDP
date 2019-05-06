@@ -8,6 +8,10 @@
         <servlet-name>ServletNewUser</servlet-name>
         <servlet-class>co.com.jmunoz.sampleweb.controller.ServletNewUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletListUsers</servlet-name>
+        <servlet-class>co.com.jmunoz.sampleweb.controller.ServletListUsers</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletSignin</servlet-name>
         <url-pattern>/ServletSignin</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ServletNewUser</servlet-name>
         <url-pattern>/ServletNewUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletListUsers</servlet-name>
+        <url-pattern>/ServletListUsers</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
