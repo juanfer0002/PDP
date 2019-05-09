@@ -35,7 +35,7 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h4 class="mb-3">New user</h4>
-                <form class="needs-validation" data-toggle="validator" role="form" method="POST" action="${path}/ServletNewUser">
+                <form class="needs-validation" data-toggle="validator" role="form" method="POST" action="${path}/ServletSaveUser">
 
                     <div class="mb-3">
                         <label for="documentId">Document ID</label>

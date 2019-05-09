@@ -8,6 +8,7 @@ package co.com.jmunoz.sampleweb.controller;
 import co.com.jmunoz.sampleweb.business.UserBusiness;
 import co.com.jmunoz.sampleweb.business.impl.UserBusinessImpl;
 import co.com.jmunoz.sampleweb.model.User;
+import co.com.jmunoz.sampleweb.util.AlertTypes;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author sala312
  */
-public class ServletNewUser extends HttpServlet {
+public class ServletSaveUser extends HttpServlet {
 
     private static final UserBusiness USER_BUSINESS = new UserBusinessImpl();
 
@@ -34,9 +35,9 @@ public class ServletNewUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession session = request.getSession();
-        
+
         String documentId = request.getParameter("documentId");
         String name = request.getParameter("name");
         String lastName = request.getParameter("lastName");
@@ -46,14 +47,17 @@ public class ServletNewUser extends HttpServlet {
 
         User user = USER_BUSINESS.getUser(documentId);
         String msg = "User already exists";
+        AlertTypes type = AlertTypes.ERROR;
 
         if (user == null) {
             user = new User(documentId, name, lastName, email, password, active);
             USER_BUSINESS.saveUser(user);
             msg = "User created";
+            type = AlertTypes.SUCCESS;
         }
-        
+
         session.setAttribute("MSG", msg);
+        session.setAttribute("TYPE", type);
         session.setAttribute("ROUTE", "/view/menu.jsp");
         request.getRequestDispatcher("/messages.jsp").forward(request, response);
     }

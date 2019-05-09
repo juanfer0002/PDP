@@ -9,7 +9,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">                
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <title>List users</title>
         <!-- Custom styles for this template -->
         <link href="${path}/css/album.css" rel="stylesheet">
@@ -42,16 +43,22 @@
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Status</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="user" items="${sessionScope.USERS}">
                             <tr>
-                                <td>${user.id}</td>
-                                <td>${user.name}</td>
-                                <td>${user.lastName}</td>
-                                <td>${user.email}</td>   
-                                <td>${user.active ? "Active" : "Inactive"}</td>   
+                                <td><c:out value="${user.id}" /></td>
+                                <td><c:out value="${user.name}" /></td>
+                                <td><c:out value="${user.lastName}" /></td>
+                                <td><c:out value="${user.email}" /></td>
+                                <td><c:out value="${user.active ? 'Active' : 'Inactive'}" /></td>
+                                <td>
+                                    <a href="${path}/ServletEditUser?id=${user.id}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
+                                    <a href="${path}/ServletDeleteUser?id=${user.id}" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
+                                </td>
+
                             </tr>
                         </c:forEach>
                     </tbody>

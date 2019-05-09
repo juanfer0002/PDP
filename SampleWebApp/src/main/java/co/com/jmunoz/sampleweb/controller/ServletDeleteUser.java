@@ -7,7 +7,7 @@ package co.com.jmunoz.sampleweb.controller;
 
 import co.com.jmunoz.sampleweb.business.UserBusiness;
 import co.com.jmunoz.sampleweb.business.impl.UserBusinessImpl;
-import co.com.jmunoz.sampleweb.model.User;
+import co.com.jmunoz.sampleweb.util.AlertTypes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,9 +18,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Juanfer
+ * @author sala312
  */
-public class ServletListUsers extends HttpServlet {
+public class ServletDeleteUser extends HttpServlet {
 
     private static final UserBusiness USER_BUSINESS = new UserBusinessImpl();
 
@@ -37,9 +37,23 @@ public class ServletListUsers extends HttpServlet {
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        session.setAttribute("USERS", USER_BUSINESS.getUsers());
 
-        request.getRequestDispatcher("/view/list_users.jsp").forward(request, response);
+        String id = request.getParameter("id");
+        String msg = "You need to provide an id";
+        AlertTypes type = AlertTypes.WARNING;
+
+        if (id != null && !id.isEmpty()) {
+            USER_BUSINESS.deleteUser(id);
+
+            msg = "User deleted";
+            type = AlertTypes.SUCCESS;
+        }
+
+        session.setAttribute("MSG", msg);
+        session.setAttribute("TYPE", type);
+        session.setAttribute("ROUTE", "/ServletListUsers");
+        request.getRequestDispatcher("/messages.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -5,24 +5,32 @@
         <servlet-class>co.com.jmunoz.sampleweb.controller.ServletSignin</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ServletNewUser</servlet-name>
-        <servlet-class>co.com.jmunoz.sampleweb.controller.ServletNewUser</servlet-class>
+        <servlet-name>ServletSaveUser</servlet-name>
+        <servlet-class>co.com.jmunoz.sampleweb.controller.ServletSaveUser</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletListUsers</servlet-name>
         <servlet-class>co.com.jmunoz.sampleweb.controller.ServletListUsers</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDeleteUser</servlet-name>
+        <servlet-class>co.com.jmunoz.sampleweb.controller.ServletDeleteUser</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ServletSignin</servlet-name>
         <url-pattern>/ServletSignin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ServletNewUser</servlet-name>
-        <url-pattern>/ServletNewUser</url-pattern>
+        <servlet-name>ServletSaveUser</servlet-name>
+        <url-pattern>/ServletSaveUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletListUsers</servlet-name>
         <url-pattern>/ServletListUsers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDeleteUser</servlet-name>
+        <url-pattern>/ServletDeleteUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

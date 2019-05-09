@@ -8,10 +8,24 @@
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">      
+
         <title>Messages</title>
     </head>
     <body>
-        <h1><c:out value="${sessionScope.MSG}"/></h1>
-        <a href="${path}${sessionScope.ROUTE}" />
+        <div class="container mt-5"> 
+            <div class="alert alert-${sessionScope.TYPE.code}" role="alert">
+                <h4 class="alert-heading">
+                    <c:out value="${sessionScope.TYPE.title}"/>
+                </h4>
+                <p><c:out value="${sessionScope.MSG}"/></p>
+                <hr>
+                <p class="mb-0"><a href="${path}${sessionScope.ROUTE}" />Go back!</p>
+            </div>
+        </div>
+
+
+
     </body>
 </html>
