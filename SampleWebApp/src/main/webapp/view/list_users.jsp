@@ -35,7 +35,7 @@
         </header>
         <section class="jumbotron text-center">
             <div class="container">
-                <table class="table">
+                <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Doc. ID</th>
@@ -55,8 +55,11 @@
                                 <td><c:out value="${user.email}" /></td>
                                 <td><c:out value="${user.active ? 'Active' : 'Inactive'}" /></td>
                                 <td>
-                                    <a href="${path}/ServletEditUser?id=${user.id}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
-                                    <a href="${path}/ServletDeleteUser?id=${user.id}" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
+                                    <div class="d-inline-flex">
+                                        <a href="${path}/ServletEditUser?id=${user.id}" class="btn btn-primary btn-sm"><span class="fa fa-edit"></span></a>
+                                        <span style="width: 4px" ></span>
+                                        <a href="${path}/ServletDeleteUser?id=${user.id}" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
+                                    </div>
                                 </td>
 
                             </tr>
