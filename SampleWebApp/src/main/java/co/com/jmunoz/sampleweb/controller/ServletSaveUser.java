@@ -46,18 +46,13 @@ public class ServletSaveUser extends HttpServlet {
         boolean active = Boolean.valueOf(request.getParameter("name"));
 
         User user = USER_BUSINESS.getUser(documentId);
-        String msg = "User already exists";
-        AlertTypes type = AlertTypes.ERROR;
-
-        if (user == null) {
-            user = new User(documentId, name, lastName, email, password, active);
-            USER_BUSINESS.saveUser(user);
-            msg = "User created";
-            type = AlertTypes.SUCCESS;
-        }
+        String msg = user == null ? "User created" : "User updated";
+        
+        user = new User(documentId, name, lastName, email, password, active);
+        USER_BUSINESS.saveUser(user);
 
         session.setAttribute("MSG", msg);
-        session.setAttribute("TYPE", type);
+        session.setAttribute("TYPE", AlertTypes.SUCCESS);
         session.setAttribute("ROUTE", "/view/menu.jsp");
         request.getRequestDispatcher("/messages.jsp").forward(request, response);
     }

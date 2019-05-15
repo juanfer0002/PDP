@@ -7,9 +7,7 @@ package co.com.jmunoz.sampleweb.controller;
 
 import co.com.jmunoz.sampleweb.business.UserBusiness;
 import co.com.jmunoz.sampleweb.business.impl.UserBusinessImpl;
-import co.com.jmunoz.sampleweb.model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

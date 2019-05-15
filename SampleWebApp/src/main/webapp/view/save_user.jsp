@@ -10,7 +10,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">                
-        <title>New user</title>
+        <title>Save user</title>
         <!-- Custom styles for this template -->
         <link href="${path}/css/album.css" rel="stylesheet">
     </head>
@@ -43,7 +43,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">@</span>
                             </div>
-                            <input type="text" class="form-control" name="documentId" placeholder="Document ID" required>
+                            <input type="text" class="form-control" name="documentId" 
+                                   placeholder="Document ID" required value="${sessionScope.USER.id}">
                             <div class="invalid-feedback" style="width: 100%;">
                                 Your document ID is required.
                             </div>
@@ -53,14 +54,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" if="name" name="name" placeholder="" value="" required>
+                            <input type="text" class="form-control" name="name" 
+                                   placeholder="" value="${sessionScope.USER.name}" required>
                             <div class="invalid-feedback">
                                 Valid name is required.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required>
+                            <input type="text" class="form-control" id="lastName" name="lastName"
+                                   placeholder="" value="${sessionScope.USER.lastName}" required>
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
@@ -69,7 +72,8 @@
 
                     <div class="mb-3">
                         <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                        <input type="email" class="form-control" id="email" name="email" 
+                               placeholder="you@example.com" value="${sessionScope.USER.email}">
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -78,15 +82,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="address">Password</label>
-                            <input type="password" class="form-control" id="address" name="address" required>
-                            <div class="invalid-feedback">
+                            <input type="password" class="form-control" id="address" name="address" 
+                                   required>
+                            <div class="invalid-feedback" >
                                 Please enter your password.
                             </div>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="status">Status</label>
-                            <select class="custom-select d-block w-100" id="status" required>
+                            <select class="custom-select d-block w-100" id="status" required value="false">
                                 <option name="status" value="true">Active</option>
                                 <option name="status" value="false">Inactive</option>
                             </select>
@@ -104,4 +109,5 @@
             </div>
         </section>        
     </body>
+    <c:remove var="USER" scope="session" />
 </html>

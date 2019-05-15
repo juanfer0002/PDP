@@ -16,6 +16,10 @@
         <servlet-name>ServletDeleteUser</servlet-name>
         <servlet-class>co.com.jmunoz.sampleweb.controller.ServletDeleteUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletEditUser</servlet-name>
+        <servlet-class>co.com.jmunoz.sampleweb.controller.ServletEditUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletSignin</servlet-name>
         <url-pattern>/ServletSignin</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ServletDeleteUser</servlet-name>
         <url-pattern>/ServletDeleteUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletEditUser</servlet-name>
+        <url-pattern>/ServletEditUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

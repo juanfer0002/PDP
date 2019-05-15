@@ -37,7 +37,7 @@
                 <h1 class="jumbotron-heading">Users</h1>
                 <p>
                     <a href="${path}/view/save_user.jsp" class="btn btn-primary my-2">Create user</a>
-                    <a href="${path}/view/list_users.jsp" class="btn btn-secondary my-2">See all users</a>
+                    <a href="${path}/ServletListUsers" class="btn btn-secondary my-2">See all users</a>
                 </p>
             </div>
         </section>        

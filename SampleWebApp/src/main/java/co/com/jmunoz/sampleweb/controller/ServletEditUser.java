@@ -7,6 +7,7 @@ package co.com.jmunoz.sampleweb.controller;
 
 import co.com.jmunoz.sampleweb.business.UserBusiness;
 import co.com.jmunoz.sampleweb.business.impl.UserBusinessImpl;
+import co.com.jmunoz.sampleweb.model.User;
 import co.com.jmunoz.sampleweb.util.AlertTypes;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author sala312
  */
-public class ServletDeleteUser extends HttpServlet {
+public class ServletEditUser extends HttpServlet {
 
     private static final UserBusiness USER_BUSINESS = new UserBusinessImpl();
 
@@ -34,25 +35,27 @@ public class ServletDeleteUser extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         HttpSession session = request.getSession();
 
         String id = request.getParameter("id");
-        String msg = "You need to provide an id";
-        AlertTypes type = AlertTypes.WARNING;
 
+        String pathToDispatch;
         if (id != null && !id.isEmpty()) {
-            USER_BUSINESS.deleteUser(id);
 
-            msg = "User deleted";
-            type = AlertTypes.SUCCESS;
+            User user = USER_BUSINESS.getUser(id);
+            session.setAttribute("USER", user);
+            pathToDispatch = "/view/save_user.jsp";
+
+        } else {
+
+            pathToDispatch = "/messages.jsp";
+            session.setAttribute("MSG", "You need to provide an id");
+            session.setAttribute("TYPE", AlertTypes.WARNING);
+            session.setAttribute("ROUTE", "/ServletListUsers");
+
         }
 
-        session.setAttribute("MSG", msg);
-        session.setAttribute("TYPE", type);
-        session.setAttribute("ROUTE", "/ServletListUsers");
-        request.getRequestDispatcher("/messages.jsp").forward(request, response);
-
+        request.getRequestDispatcher(pathToDispatch).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
