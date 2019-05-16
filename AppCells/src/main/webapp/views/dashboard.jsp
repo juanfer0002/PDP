@@ -1,12 +1,10 @@
-<%-- 
-    Document   : cell
-    Created on : 15/05/2019, 06:43:51 PM
-    Author     : sala312
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
+    <c:set var="path" scope="session" value="${pageContext.servletContext.contextPath}"/>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Dashboard</title>
@@ -28,34 +26,70 @@
         </div>
 
         <div class="container">
-            <div class="card-deck mb-3 text-center">
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">Free</h4>
+
+
+            <div class="card-deck mb-4 text-center">
+                <c:forEach var="cell" items="${sessionScope.CELLS}">
+                    <div class="col-lg-4 col-md-6">
+                        <form class="needs-validation" data-toggle="validator" role="form" method="POST" action="${path}/CellServlet">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-header text-white bg-${cell.reserved ? 'success' : 'dark'}">
+                                    <h4 class="my-0 font-weight-normal">Cell ${cell.id}</h4>
+                                </div>
+                                <div class="card-body">
+                                    <img src="${cell.photo}" class="card-img-top mb-4">
+
+                                    <input type="hidden" name="id" value="${cell.id}"/>
+
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Document ID</span>
+                                        </div>
+                                        <input type="text" class="form-control" name="userId" 
+                                               required value="${cell.userId}">
+                                        <div class="invalid-feedback" style="width: 100%;">
+                                            Your document ID is required.
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Date</span>
+                                        </div>
+                                        <input type="text" class="form-control" name="date" 
+                                               value="${cell.date}" required>
+                                        <div class="invalid-feedback">
+                                            Valid name is required.
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Photo</span>
+                                        </div>
+                                        <input type="text" class="form-control" name="photo" 
+                                               value="${cell.photo}" required>
+                                        <div class="invalid-feedback">
+                                            Valid name is required.
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="btn-group btn-group-lg btn-block" role="group" aria-label="Basic example">
+                                    <button type="submit" name="action" value="RESERVE_CELL" class="btn btn-success">Reserve</button>
+                                    <button type="submit" name="action" value="UPDATE_CELL" class="btn btn-primary">Update</button>
+                                    <button type="submit" name="action" value="FREE_CELL" class="btn btn-dark">Free</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="card-body">
-                        <img src="..." class="card-img-top" alt="...">
-                        <ul class="list-unstyled mt-3 mb-4">
-                            <li>Document:</li>
-                            <li>Document:</li>
-                            <li>Document:</li>
-                            <li>Document:</li>
-                            <li>Date:</li>
-                        </ul>
-
-                        <div class="btn-group btn-group-lg btn-block" role="group" aria-label="Basic example">
-                            <button type="button" class="btn btn-outline-primary">Left</button>
-                            <button type="button" class="btn btn-outline-danger">Middle</button>
-                            <button type="button" class="btn btn-outline-dark">Right</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
+                </c:forEach>
             </div>
 
+
         </div>
+
 
     </body>
 </html>

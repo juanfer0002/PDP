@@ -18,6 +18,6 @@ public interface CellDAO {
 
     Cell getCell(String id);
 
-    Cell updateCell(Cell cell);
+    Cell updateCell(Cell cell, boolean updateStatus);
 
 }

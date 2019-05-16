@@ -26,19 +26,19 @@ public class CellBusinessImpl implements CellBusiness {
 
     @Override
     public void reserveCell(Cell cell) {
-        cell = this.updateCell(cell);
         cell.setReserved(true);
+        cellDAO.updateCell(cell, true);
     }
 
     @Override
     public void freeCell(String id) {
         Cell cell = new Cell(id, "", "", "", false);
-        this.updateCell(cell);
+        cellDAO.updateCell(cell, true);
     }
 
     @Override
     public Cell updateCell(Cell cell) {
-        return cellDAO.updateCell(cell);
+        return cellDAO.updateCell(cell, false);
     }
 
 }

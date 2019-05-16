@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
  */
 public class UserServlet extends HttpServlet {
 
+    private static final String MESSAGES_PATH = "/messages.jsp";
     private static final String NO_ACTION_VALID_PATH = "/no_valid_action.jsp";
     private static final String SIGN_IN = "SIGN_IN";
 
@@ -40,13 +41,16 @@ public class UserServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         action = action != null ? action : "";
-        
+
         switch (action) {
             case SIGN_IN:
                 this.Signin(request, response);
+                break;
+
             default:
                 request.getRequestDispatcher(NO_ACTION_VALID_PATH)
                         .forward(request, response);
+                break;
         }
     }
 
@@ -60,11 +64,11 @@ public class UserServlet extends HttpServlet {
 
         String pathToDispatch;
         boolean isValid = USER_BUSINESS.authUser(username, password);
-        
+
         if (isValid) {
-            pathToDispatch = "/views/dashboard.jsp";
+            pathToDispatch = "/CellServlet?action=LIST_CELLS";
         } else {
-            pathToDispatch = "/messages.jsp";
+            pathToDispatch = MESSAGES_PATH;
             session.setAttribute("MSG", "User isn't valid");
             session.setAttribute("TYPE", AlertTypes.WARNING);
             session.setAttribute("ROUTE", "/");

@@ -23,13 +23,17 @@ public class CellDAOImpl implements CellDAO {
     }
 
     @Override
-    public Cell updateCell(Cell cell) {
+    public Cell updateCell(Cell cell, boolean updateStatus) {
         Cell cellInlist = this.getCell(cell.getId());
 
         if (cellInlist != null) {
             cellInlist.setDate(cell.getDate());
             cellInlist.setUserId(cell.getUserId());
             cellInlist.setPhoto(cell.getPhoto());
+
+            if (updateStatus) {
+                cellInlist.setReserved(cell.isReserved());
+            }
         }
 
         return cellInlist;
