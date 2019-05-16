@@ -23,7 +23,7 @@ public class CellData {
         CELLS.add(new Cell("1"));
         CELLS.add(new Cell("2"));
         CELLS.add(new Cell("3"));
-        CELLS.add(new Cell("4"));
+        CELLS.add(new Cell("4", "http://writingexercises.co.uk/images2/randomimage/tree.jpg", "15/05/2019", "1054", true));
         CELLS.add(new Cell("5"));
         CELLS.add(new Cell("6"));
         CELLS.add(new Cell("7"));
