@@ -16,7 +16,7 @@
             body, html {
                 height: 100%
             }
-            
+
             .btn {
                 min-height: 50px
             }
@@ -56,7 +56,7 @@
             </div>
             <br />
             <div class="container alert alert-${MSG_TYPE != null ? MSG_TYPE : 'primary'}">
-                ${sessionScope.MSG}
+                <h4 class="alert-heading">${sessionScope.MSG}</h4>
 
             </div>
 
@@ -66,6 +66,8 @@
                 </a>
             </div>
         </div>
+
+        <c:remove var="MSG_TYPE" scope="session" />
 
     </body>
 </html>
