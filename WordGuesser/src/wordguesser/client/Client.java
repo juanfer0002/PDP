@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package applestore.client;
+package wordguesser.client;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -19,14 +19,15 @@ import java.util.logging.Logger;
  */
 public class Client {
 
+    private final static String BLACK_CIRCLE = "\u25CF";
+    private final static String WHITE_CIRCLE = "\u25CB";
+
     /**
      * @param args the command line arguments
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
 
-        
-        System.out.println("\u25CF");
         Thread readerThread = null;
         Thread writerThread = null;
 
@@ -68,6 +69,10 @@ public class Client {
 
                         String serverMsg = inFromServer.readLine();
                         if (serverMsg != null) {
+
+                            serverMsg = serverMsg.replace("*", BLACK_CIRCLE);
+                            serverMsg = serverMsg.replace("+", WHITE_CIRCLE);
+
                             System.out.println(serverMsg.replace("/n", "\n"));
                             System.out.println("\n----------------------------------------------------");
                         } else {
