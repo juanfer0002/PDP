@@ -1,0 +1,175 @@
+[33mcommit 76bd77c2779f0c9bb0c255b0611a7fe09993030a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed Jul 10 19:46:16 2019 -0500
+
+    Examn: Word guesser
+
+[33mcommit 3a2a32bad0aa66b30832f664d46612869ee03903[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Tue Jul 9 23:51:40 2019 -0500
+
+    Fix: Workshop TrainTicketBooking
+
+[33mcommit b0ae0705a81d3e6274237557d3d81ad9f75e24a8[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Tue Jul 9 23:51:21 2019 -0500
+
+    Workshop TrainTicketBooking
+
+[33mcommit acfe30298a5fd9694080583ff3134433f7b9c5a7[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Tue Jul 9 22:00:45 2019 -0500
+
+    Workshop AppleStore
+
+[33mcommit 7164c565ca46d84b4e5fc9a2718375cda5a045d0[m
+Merge: 8a608cc d42b752
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:58:07 2019 -0500
+
+    Merge
+
+[33mcommit d42b752f9743f47755fed7da78971599150aa62d[m[33m ([m[1;31morigin/dev2[m[33m)[m
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:54:37 2019 -0500
+
+    conflicto 2
+
+[33mcommit 8a608ccabe5fb038936deb2efa7451d67a32908d[m
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:53:32 2019 -0500
+
+    Conflicto 1
+
+[33mcommit 76186317b1f8e7304f22621b4c96171fb7d5fa0b[m
+Merge: f9efe21 d460861
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:47:16 2019 -0500
+
+    Merge branch 'dev2'
+
+[33mcommit f9efe21b9676d91f09aad5780c2a80cc22d146de[m
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:41:57 2019 -0500
+
+    Primer ejemplo
+
+[33mcommit d46086198593af6257d78a034b82536c9f6bb1fb[m
+Author: Giovanny <yovaz05@gmail.com>
+Date:   Wed Jul 3 18:40:39 2019 -0500
+
+    Primer ejemplo
+
+[33mcommit 1823ee43cec468f641851c2f7f32560c35d30618[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed Jun 26 19:25:16 2019 -0500
+
+    Udp socket sample: palindrome
+
+[33mcommit 52a3a24df3f75f41271b101e4fb38637cddf071b[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Wed Jun 26 20:37:08 2019 -0500
+
+    Socket sample: the hangman game
+
+[33mcommit 2500c41511b545bdde1bfed74187534cacf53c71[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 29 20:26:07 2019 -0500
+
+    Fix project location, parcial 1
+
+[33mcommit 747460c7d67c398f7e36402c123d532770be5ffc[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 29 20:23:34 2019 -0500
+
+    Parcial 1 -  Fix mensaje
+
+[33mcommit 74873be85594654df69ae9b376af149c9634c003[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 29 20:14:46 2019 -0500
+
+    Parcial 1
+
+[33mcommit 43bfe9d48ca7e0866bb7b3b8f324b1fe55324c59[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Thu May 16 03:43:31 2019 -0500
+
+    Final fix
+
+[33mcommit b83c4eb1b14d9f9836b269618086fd575d0c33fe[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Thu May 16 03:39:18 2019 -0500
+
+    Workshop finish
+
+[33mcommit c9c1eeb158a3f9264f57e576e18c7d9549c48998[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 15 20:09:22 2019 -0500
+
+    Workshop pdp
+
+[33mcommit a11b14871e1d58585fb0f99025c6518919be076b[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 15 18:42:05 2019 -0500
+
+    Edit user
+
+[33mcommit 3d772438cccc60d766d73f9711e94d0dab3be454[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 15 18:39:44 2019 -0500
+
+    Edit user
+
+[33mcommit 44d647ea5bf689f0016638d28d8a3e737e39ac90[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 8 20:13:09 2019 -0500
+
+    Display inline buttons in table
+
+[33mcommit 4cd02ba02dbaa454fda7a7b4635dbc5e1bb628c8[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed May 8 19:45:08 2019 -0500
+
+    user actions in table and refactor
+
+[33mcommit 44804dd835b81104e0ca9a6766322d92157a8b27[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Sun May 5 21:27:01 2019 -0500
+
+    List users
+
+[33mcommit a2750c4bb87dd6892afa4d9d24926e41e9ba6e3a[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed Apr 24 20:04:46 2019 -0500
+
+    Save user action on servlet
+
+[33mcommit 0fc35fbc6103554c07254cef519fb0512f49ba3d[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed Apr 24 19:26:06 2019 -0500
+
+    Menu jsp, new user jsṕ
+
+[33mcommit 6861a88a225e3b0c355d3b1d989b575cbad6994b[m
+Author: sala 312 <sala312@poliacademico.edu.loc>
+Date:   Wed Apr 24 18:32:55 2019 -0500
+
+    menu and first jsp
+
+[33mcommit be666cbfa608ee9371527e083960e9ca249aa39c[m
+Author: Juan Fernando Muñoz Marin <juanfer0002@gmail.com>
+Date:   Thu Apr 4 02:28:29 2019 -0500
+
+    Homework for next class
+
+[33mcommit 765a9dacf1f7294b73c1459a363f48e4845a7387[m
+Author: Juan Fernando Muñoz M <juanfer0002@hotmail.com>
+Date:   Wed Apr 3 19:32:51 2019 -0500
+
+    First Sample project in class
+
+[33mcommit 7078a6e03eb7ef9d8e2007611e892423bca6dc3c[m
+Author: juanfer0002 <juanfer0002@hotmail.com>
+Date:   Wed Apr 3 18:49:49 2019 -0500
+
+    Initial commit
